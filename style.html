@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oportuniza | App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <section id="login-screen" class="screen active">
+            <header>
+                <img src="logo.png" alt="Logo" class="app-logo">
+                <h1 class="brand-name">Entrar</h1>
+            </header>
+
+            <div class="form-group">
+                <div class="input-field">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="email" id="login-email" placeholder="E-mail">
+                </div>
+                <div class="input-field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="login-password" placeholder="Senha">
+                </div>
+                <button class="forgot-link" onclick="showScreen('recover-screen')">Esqueceu a senha?</button>
+            </div>
+
+            <button class="btn-primary" onclick="handleLogin()">Logar</button>
+            
+            <div class="footer">
+                <button class="signup-link" onclick="showScreen('register-screen')">Cadastrar-se</button>
+            </div>
+        </section>
+
+        <section id="register-screen" class="screen">
+            <header>
+                <h1 class="brand-name">Criar Conta</h1>
+                <p class="tagline">Junte-se ao Oportuniza</p>
+            </header>
+
+            <div class="form-group">
+                <div class="input-field">
+                    <i class="fa-regular fa-user"></i>
+                    <input type="text" id="reg-name" placeholder="Nome Completo">
+                </div>
+                <div class="input-field">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="email" id="reg-email" placeholder="E-mail">
+                </div>
+                <div class="input-field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="reg-password" placeholder="Crie uma Senha">
+                </div>
+            </div>
+
+            <button class="btn-primary" onclick="handleRegister()">Registrar</button>
+            
+            <div class="footer">
+                <button class="signup-link" onclick="showScreen('login-screen')">Voltar para o Login</button>
+            </div>
+        </section>
+
+        <section id="recover-screen" class="screen">
+            <header>
+                <h1 class="brand-name">Recuperar</h1>
+                <p class="tagline">Digite seu e-mail cadastrado</p>
+            </header>
+
+            <div class="form-group">
+                <div class="input-field">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="email" id="recover-email" placeholder="E-mail">
+                </div>
+            </div>
+
+            <button class="btn-primary" onclick="handleRecover()">Enviar Instruções</button>
+            
+            <div class="footer">
+                <button class="signup-link" onclick="showScreen('login-screen')">Cancelar</button>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

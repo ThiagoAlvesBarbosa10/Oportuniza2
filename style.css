@@ -1,0 +1,99 @@
+:root {
+    --primary: #4FA2C0;
+    --bg-light: #F9FAFB;
+    --text-main: #1A202C;
+    --text-muted: #A0AEC0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; outline: none; }
+
+body {
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+
+.app-container {
+    width: 360px;
+    height: 720px;
+    background-color: var(--bg-light);
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+}
+
+.screen {
+    padding: 50px 30px;
+    display: none;
+    flex-direction: column;
+    height: 100%;
+}
+
+.screen.active { display: flex; animation: fadeIn 0.4s ease; }
+
+@keyframes fadeIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
+
+header { text-align: center; margin-bottom: 40px; }
+.app-logo { width: 120px; margin-bottom: 15px; }
+.brand-name { font-size: 32px; font-weight: 600; color: var(--text-main); }
+.tagline { font-size: 14px; color: var(--text-muted); margin-top: 5px; }
+
+.form-group { display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px; }
+
+.input-field {
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    border: 1px solid #edf2f7;
+}
+
+.input-field i { color: var(--primary); font-size: 16px; margin-right: 12px; }
+
+.input-field input {
+    border: none;
+    padding: 18px 0;
+    width: 100%;
+    font-size: 15px;
+    background: transparent;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 18px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 8px 15px rgba(79, 162, 192, 0.2);
+}
+
+.btn-primary:active { transform: scale(0.96); }
+
+.forgot-link {
+    background: none;
+    border: none;
+    color: var(--text-main);
+    font-size: 13px;
+    align-self: center;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.footer { margin-top: auto; text-align: center; }
+
+.signup-link {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 15px;
+    cursor: pointer;
+}
