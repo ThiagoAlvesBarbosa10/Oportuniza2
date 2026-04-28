@@ -38,13 +38,16 @@ function handleLogin() {
     if (storedUser) {
         const user = JSON.parse(storedUser);
         if (user.pass === pass) {
-            alert(`Bem-vindo, ${user.name}!`);
-            // Aqui você redirecionaria para a sua tela HOME do Oportuniza
+            // Atualiza o nome na Home
+            document.getElementById('user-name-display').innerText = user.name.split(' ')[0];
+            
+            // REDIRECIONA PARA A TELA HOME
+            showScreen('home-screen'); 
         } else {
             alert("Senha incorreta.");
         }
     } else {
-        alert("Usuário não encontrado. Verifique o e-mail ou cadastre-se.");
+        alert("Usuário não encontrado.");
     }
 }
 
@@ -58,3 +61,4 @@ function handleRecover() {
         alert("Digite um e-mail.");
     }
 }
+

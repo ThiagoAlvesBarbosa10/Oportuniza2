@@ -6,6 +6,7 @@
     <title>Oportuniza | App</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -17,7 +18,6 @@
                 <img src="logo.png" alt="Logo" class="app-logo">
                 <h1 class="brand-name">Entrar</h1>
             </header>
-
             <div class="form-group">
                 <div class="input-field">
                     <i class="fa-regular fa-envelope"></i>
@@ -29,9 +29,7 @@
                 </div>
                 <button class="forgot-link" onclick="showScreen('recover-screen')">Esqueceu a senha?</button>
             </div>
-
             <button class="btn-primary" onclick="handleLogin()">Logar</button>
-            
             <div class="footer">
                 <button class="signup-link" onclick="showScreen('register-screen')">Cadastrar-se</button>
             </div>
@@ -42,7 +40,6 @@
                 <h1 class="brand-name">Criar Conta</h1>
                 <p class="tagline">Junte-se ao Oportuniza</p>
             </header>
-
             <div class="form-group">
                 <div class="input-field">
                     <i class="fa-regular fa-user"></i>
@@ -57,9 +54,7 @@
                     <input type="password" id="reg-password" placeholder="Crie uma Senha">
                 </div>
             </div>
-
             <button class="btn-primary" onclick="handleRegister()">Registrar</button>
-            
             <div class="footer">
                 <button class="signup-link" onclick="showScreen('login-screen')">Voltar para o Login</button>
             </div>
@@ -70,19 +65,55 @@
                 <h1 class="brand-name">Recuperar</h1>
                 <p class="tagline">Digite seu e-mail cadastrado</p>
             </header>
-
             <div class="form-group">
                 <div class="input-field">
                     <i class="fa-regular fa-envelope"></i>
                     <input type="email" id="recover-email" placeholder="E-mail">
                 </div>
             </div>
-
             <button class="btn-primary" onclick="handleRecover()">Enviar Instruções</button>
-            
             <div class="footer">
                 <button class="signup-link" onclick="showScreen('login-screen')">Cancelar</button>
             </div>
+        </section>
+
+        <section id="home-screen" class="screen">
+            <header class="home-header">
+                <img src="logo.png" alt="Logo" class="app-logo-small">
+                <div class="user-profile">
+                    <img src="user_profile.png" alt="Usuário" class="user-avatar">
+                    <span class="welcome-text">Olá, <strong id="user-name-display">Usuário</strong></span>
+                </div>
+            </header>
+            <main class="home-main">
+                <div class="widget-card card-purple">
+                    <div class="card-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                    <div class="card-content">
+                        <h3>3 Entrevistas</h3>
+                        <p>Agendadas para esta semana</p>
+                    </div>
+                    <button class="card-action"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="widget-card card-blue">
+                    <div class="card-icon"><i class="fa-solid fa-briefcase"></i></div>
+                    <div class="card-content">
+                        <h3>12 Novas Vagas</h3>
+                        <p>Compatíveis com seu perfil</p>
+                    </div>
+                    <button class="card-action"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="widget-highlight card-green">
+                    <h3>Vaga Destaque: Dev Júnior</h3>
+                    <p>Empresa TechSolutions</p>
+                    <button class="btn-highlight">Ver Detalhes</button>
+                </div>
+            </main>
+            <nav class="bottom-nav">
+                <button class="nav-item active"><i class="fa-solid fa-house"></i>Home</button>
+                <button class="nav-item"><i class="fa-solid fa-magnifying-glass"></i>Buscar</button>
+                <button class="nav-item"><i class="fa-solid fa-bell"></i>Avisos</button>
+                <button class="nav-item" onclick="showScreen('login-screen')"><i class="fa-solid fa-right-from-bracket"></i>Sair</button>
+            </nav>
         </section>
 
     </div>
