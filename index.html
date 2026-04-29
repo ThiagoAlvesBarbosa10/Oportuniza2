@@ -79,7 +79,9 @@
 
         <section id="home-screen" class="screen">
             <header class="home-header">
-                <img src="logo.png" alt="Logo" class="app-logo-small">
+                <button class="menu-toggle" onclick="toggleSidebar()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
                 <div class="user-profile">
                     <img src="user_profile.png" alt="Usuário" class="user-avatar">
                     <span class="welcome-text">Olá, <strong id="user-name-display">Usuário</strong></span>
@@ -108,34 +110,50 @@
                     <button class="btn-highlight">Ver Detalhes</button>
                 </div>
             </main>
-            <nav class="bottom-nav">
-                <button class="nav-item active"><i class="fa-solid fa-house"></i>Home</button>
-                <button class="nav-item"><i class="fa-solid fa-magnifying-glass"></i>Buscar</button>
-                <button class="nav-item"><i class="fa-solid fa-bell"></i>Avisos</button>
-                <button class="nav-item" onclick="showScreen('settings-screen')"><i class="fa-solid fa-gear"></i>Config</button>
-            </nav>
-        </section>
-
-        <section id="settings-screen" class="screen">
-            <header class="home-header">
-                <button class="back-button" onclick="showScreen('home-screen')"><i class="fa-solid fa-arrow-left"></i></button>
-                <h1 class="brand-name">Configurações</h1>
-            </header>
-            <main class="home-main">
-                <div class="settings-list">
-                    <button class="settings-item" onclick="handleLogout()">
-                        <i class="fa-solid fa-right-from-bracket"></i>
-                        <span>Sair da Conta</span>
-                        <i class="fa-solid fa-chevron-right"></i>
+            
+            <!-- Sidebar Lateral (dentro da home-screen) -->
+            <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <span class="sidebar-title">Menu</span>
+                    <button class="sidebar-close" onclick="toggleSidebar()">
+                        <i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>
-            </main>
-            <nav class="bottom-nav">
-                <button class="nav-item" onclick="showScreen('home-screen')"><i class="fa-solid fa-house"></i>Home</button>
-                <button class="nav-item"><i class="fa-solid fa-magnifying-glass"></i>Buscar</button>
-                <button class="nav-item"><i class="fa-solid fa-bell"></i>Avisos</button>
-                <button class="nav-item active"><i class="fa-solid fa-gear"></i>Config</button>
-            </nav>
+                <nav class="sidebar-nav">
+                    <button class="sidebar-item active" onclick="navigateAndClose('home')">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Home</span>
+                    </button>
+                    <button class="sidebar-item" onclick="navigateAndClose('buscar')">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <span>Buscar</span>
+                    </button>
+                    <button class="sidebar-item" onclick="navigateAndClose('avisos')">
+                        <i class="fa-solid fa-bell"></i>
+                        <span>Avisos</span>
+                    </button>
+                    <button class="sidebar-item" onclick="navigateAndClose('settings')">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>Configurações</span>
+                    </button>
+                </nav>
+            </aside>
+        </section>
+
+        <!-- Tela de Configurações -->
+        <section id="settings-screen" class="screen">
+            <header class="settings-header">
+                <button class="back-btn" onclick="showScreen('home-screen')"><i class="fa-solid fa-arrow-left"></i></button>
+                <h1 class="brand-name">Configurações</h1>
+            </header>
+            <div class="settings-content">
+                <div class="settings-option" onclick="handleLogout()">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Sair da Conta</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
         </section>
 
     </div>
