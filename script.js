@@ -62,3 +62,8 @@ function handleRecover() {
     }
 }
 
+// Logout
+function handleLogout() {
+    showScreen('login-screen');
+}
+

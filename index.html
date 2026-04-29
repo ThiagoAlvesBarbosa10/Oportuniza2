@@ -87,12 +87,12 @@
             </header>
             <main class="home-main">
                 <div class="widget-card card-purple">
-                    <div class="card-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                    <img src="CIEE.png" alt="CIEE" class="card-icon-img">
                     <div class="card-content">
-                        <h3>3 Entrevistas</h3>
-                        <p>Agendadas para esta semana</p>
+                        <h3>CIEE</h3>
+                        <p>Centro de Integração Empresa-Escola</p>
                     </div>
-                    <button class="card-action"><i class="fa-solid fa-chevron-right"></i></button>
+                    <a href="https://www.cieepr.org.br" target="_blank" class="card-action"><i class="fa-solid fa-chevron-right"></i></a>
                 </div>
                 <div class="widget-card card-blue">
                     <div class="card-icon"><i class="fa-solid fa-briefcase"></i></div>
@@ -112,7 +112,29 @@
                 <button class="nav-item active"><i class="fa-solid fa-house"></i>Home</button>
                 <button class="nav-item"><i class="fa-solid fa-magnifying-glass"></i>Buscar</button>
                 <button class="nav-item"><i class="fa-solid fa-bell"></i>Avisos</button>
-                <button class="nav-item" onclick="showScreen('login-screen')"><i class="fa-solid fa-right-from-bracket"></i>Sair</button>
+                <button class="nav-item" onclick="showScreen('settings-screen')"><i class="fa-solid fa-gear"></i>Config</button>
+            </nav>
+        </section>
+
+        <section id="settings-screen" class="screen">
+            <header class="home-header">
+                <button class="back-button" onclick="showScreen('home-screen')"><i class="fa-solid fa-arrow-left"></i></button>
+                <h1 class="brand-name">Configurações</h1>
+            </header>
+            <main class="home-main">
+                <div class="settings-list">
+                    <button class="settings-item" onclick="handleLogout()">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Sair da Conta</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </main>
+            <nav class="bottom-nav">
+                <button class="nav-item" onclick="showScreen('home-screen')"><i class="fa-solid fa-house"></i>Home</button>
+                <button class="nav-item"><i class="fa-solid fa-magnifying-glass"></i>Buscar</button>
+                <button class="nav-item"><i class="fa-solid fa-bell"></i>Avisos</button>
+                <button class="nav-item active"><i class="fa-solid fa-gear"></i>Config</button>
             </nav>
         </section>
 
